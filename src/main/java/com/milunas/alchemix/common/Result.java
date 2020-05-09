@@ -18,7 +18,7 @@ public class Result<T>
         return new Result<>(true, holding, Optional.empty());
     }
 
-    public static Result<Void> failure() {
+    public static <T> Result<T> failure() {
         return new Result<>(false, null, Optional.empty());
     }
 

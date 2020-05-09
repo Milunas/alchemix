@@ -1,6 +1,8 @@
 package com.milunas.alchemix.domain;
 
 import com.milunas.alchemix.common.Result;
+import com.milunas.alchemix.external.Item;
+import com.milunas.alchemix.external.Score;
 
 class Hero
 {

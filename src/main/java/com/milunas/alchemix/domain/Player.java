@@ -1,18 +1,27 @@
 package com.milunas.alchemix.domain;
 
 import com.milunas.alchemix.common.Result;
+import com.milunas.alchemix.external.Mission;
+
+import java.util.Set;
 
 class Player
 {
-    private final Integer teamsLimit;
+    private final Set<Mission> unblockedMissions;
 
-    private Player(Integer teamsLimit) {
-        this.teamsLimit = teamsLimit;
+    private Player()
+    {
+        this.unblockedMissions = Set.of();
     }
 
-    static Player of(Integer teamsLimit)
+    private Player(Set<Mission> unblockedMissions)
     {
-        return new Player(teamsLimit);
+        this.unblockedMissions = unblockedMissions;
+    }
+
+    static Player of()
+    {
+        return new Player();
     }
 
     Result form()
@@ -20,7 +29,12 @@ class Player
         return Result.failure();
     }
 
-    Result sendOn(Mission mission)
+    Result deform()
+    {
+        return Result.failure();
+    }
+
+    Result<SentOnMission> sendOn(Mission mission)
     {
         return Result.failure();
     }
